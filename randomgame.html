@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Интеллектуальная игра "Выйграй холодильник Геннадия Горина!"</h1>
+    <br>
+    <h2>В данной игре вам нужно угадать число, которое загадал Геннадий Горин</h2>
+    <br>
+    <input type="button" value="0" onclick="genaGorin(this)">
+    <input type="text" id="res" value="100">
+    <input type="button" value="1" onclick="genaGorin(this)">
+
+    <script>
+        var total = 100;
+    function genaGorin(obj){
+        var rn = Math.round( Math.random()*1);
+        if(obj.value == rn){
+            total = total -5;
+            res.value=total;
+            alert("Правильно. До выйгрыша осталось "+ total);
+        }
+        else{
+            total = total +5;
+            res.value=total;
+            alert("Не правильно. До выйгрыша осталось "+ total);
+        }
+        if(total==0){
+            alert("ВЫ ВЫЙГРАЛИ ХОЛОДИЛЬНИК ГЕННАДИЯ ГОРИНА!");
+        }
+        document.getElementById("info").innerHTML=rn;
+    }
+    </script>
+</body>
+</html>
